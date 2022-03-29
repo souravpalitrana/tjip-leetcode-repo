@@ -14,6 +14,7 @@ import java.util.Map;
  */
 public class Solution {
 
+    // Time Complexity: O(n) and Space Complexity: O(n)
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> seenNums  = new HashMap<>();
         
