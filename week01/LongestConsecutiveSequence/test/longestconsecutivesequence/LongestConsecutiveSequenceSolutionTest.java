@@ -54,7 +54,5 @@ public class LongestConsecutiveSequenceSolutionTest {
         int expected = 9;
         int actual = solution.longestConsecutive(nums);
         assertEquals(expected, actual);
-    }
-    
-    
+    }   
 }
