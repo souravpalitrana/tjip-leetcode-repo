@@ -24,7 +24,8 @@ public class ValidParenthesesSolution {
     
     // We first add each parenthes to stack. Before adding if current parenthes
     // is equal to the end parenthes then we will pop instead of adding. Otherwise
-    // we add to the stack
+    // we add to the stack.
+    // Time Complexity: O(n) Space Complexity: O(n) because of stack
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<Character>();
         
