@@ -46,28 +46,25 @@ public class LongestSubstringWithoutRepeatingCharactersSolutionTest {
     @Test
     public void testLengthOfLongestSubstringCase1() {
         String s = "abcabcbb";
-        LongestSubstringWithoutRepeatingCharactersSolution instance = new LongestSubstringWithoutRepeatingCharactersSolution();
         int expResult = 3;
-        int result = instance.lengthOfLongestSubstring(s);
+        int result = solution.lengthOfLongestSubstring(s);
         assertEquals(expResult, result);
     }
     
-    /*@Test
+    @Test
     public void testLengthOfLongestSubstringCase2() {
         String s = "bbbbb";
-        LongestSubstringWithoutRepeatingCharactersSolution instance = new LongestSubstringWithoutRepeatingCharactersSolution();
         int expResult = 1;
-        int result = instance.lengthOfLongestSubstring(s);
+        int result = solution.lengthOfLongestSubstring(s);
         assertEquals(expResult, result);
     }
     
     @Test
     public void testLengthOfLongestSubstringCase3() {
         String s = "pwwkew";
-        LongestSubstringWithoutRepeatingCharactersSolution instance = new LongestSubstringWithoutRepeatingCharactersSolution();
         int expResult = 3;
-        int result = instance.lengthOfLongestSubstring(s);
+        int result = solution.lengthOfLongestSubstring(s);
         assertEquals(expResult, result);
-    }*/
+    }
     
 }
