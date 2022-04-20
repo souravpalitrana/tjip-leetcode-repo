@@ -13,11 +13,11 @@ import java.util.Stack;
  */
 public class DecodeStringSolution {
     
-    public static void main(String[] args) {
-        String decodedString = decodeStringFirstAlternate("sd2[f2[e]g]i");
-        System.out.print(decodedString);
-    }
-
+    // Solution 1:
+    // We track last non digit idx because when we find a starting bracket
+    // we can create a number string just creating a substring by 
+    // lastNonDigitCharacterIdx + 1 to i position and add this number to stack
+    // for character we add all individual character one by one
     public static String decodeString(String s) {
         Stack<String> stack = new Stack<String>();
         int lastNonDigitCharacterIdx = -1;
@@ -39,8 +39,6 @@ public class DecodeStringSolution {
         decodeLastString(stack);
         return stack.peek();
     }
-    
-    
     
     
     // Solution 2
@@ -99,29 +97,6 @@ public class DecodeStringSolution {
         decodeLastString(stack);
         return stack.peek();
     }
-    
-    /*public static void decodeLastStringFirstAlternate(Stack<String> stack) {
-        String currentString = "";
-        String currentNumber = "";
-        while (!stack.empty()) {
-            String value = stack.pop();
-            if (value.charAt(0) > 47 && value.charAt(0) < 58) {
-                currentNumber = value;
-                break;
-            } else {
-                 currentString = value + currentString;
-            }
-        }
-        
-        int number = (currentNumber.length() > 0) ? Integer.valueOf(currentNumber) : 1;
-        
-        String decodedString = "";
-        for (int i = 1; i <= number; i++) {
-            decodedString += currentString;
-        }
-        
-        stack.add(decodedString);
-    }*/
     
     public static void decodeLastString(Stack<String> stack) {
         String currentString = "";
