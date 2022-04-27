@@ -32,7 +32,7 @@ public class DetectSquares {
     }
     
     // Ignoring string conversion of a point as it is language specific
-    // Time Complexity:: O(N^2) 
+    // Time Complexity:: O(N) 
     // Space Complexity: O(1) ignoring stored point
     public int count(int[] qPoint) {
         int total = 0;
