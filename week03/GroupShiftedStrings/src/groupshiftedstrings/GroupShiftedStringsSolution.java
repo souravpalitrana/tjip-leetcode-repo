@@ -15,14 +15,6 @@ import java.util.Map;
  * @author souravpalit
  */
 public class GroupShiftedStringsSolution {
-    
-    public static void main(String args []) {
-        String s1 = "bcd";
-        String s2 = "wxy";
-        
-        System.out.println(getHash(s1));
-        System.out.println(getHash(s2));
-    }
 
     // Time Complexity: O(MN) where M is the max length of a string and N is the
     // number of string.
@@ -59,7 +51,7 @@ public class GroupShiftedStringsSolution {
         return group;
     }
     
-    public static String getHash(String string) {
+    public String getHash(String string) {
         StringBuilder builder = new StringBuilder();
         
         int shift = string.charAt(0);
@@ -71,7 +63,7 @@ public class GroupShiftedStringsSolution {
         return builder.toString();
     }
     
-    public static char shiftCharacter(char ch, int shift) {
+    public char shiftCharacter(char ch, int shift) {
         return (char) ((ch - shift + 26) % 26 + 'a');
     }
     
