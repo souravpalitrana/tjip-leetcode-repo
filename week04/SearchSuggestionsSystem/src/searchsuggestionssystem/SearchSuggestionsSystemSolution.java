@@ -42,8 +42,11 @@ public class SearchSuggestionsSystemSolution {
         result.add(searchResult);
     }
     
-    public List<List<String>> suggestedProductsFirstAlternate(String[] products, String searchWord) {
-        //Arrays.sort(products);
+    // Using Trie
+    public List<List<String>> suggestedProductsFirstAlternate(
+            String[] products, 
+            String searchWord
+    ) {
         List<List<String>> result = new ArrayList<>();
         Trie trie = new Trie();
         
