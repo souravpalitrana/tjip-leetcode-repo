@@ -10,35 +10,25 @@ package lowestcommonancestorofabinarytree;
  * @author souravpalit
  */
 public class LowestCommonAncestorOfABinaryTree {
-    
-    public static void main(String args[]) {
-        TreeNode root = new TreeNode(3);
-        root.right = new TreeNode(1);
-        root.right.left = new TreeNode(0);
-        root.right.right = new TreeNode(8);
-        
-        root.left = new TreeNode(5); // target
-        root.left.left = new TreeNode(6);
-        root.left.right = new TreeNode(2);
-        root.left.right.left = new TreeNode(7);
-        root.left.right.right = new TreeNode(4); // target
-        
-        lowestCommonAncestor(root, root.left, root.left.right.right);
-        System.out.println(loweestCommonAncestor);
-    }
 
-    static TreeNode loweestCommonAncestor = null;
+    private TreeNode loweestCommonAncestor = null;
 
-    public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    /**
+     * Time Complexity: O(n) 
+     * Space Complexity: Average Case: O(h), Worst Case:: O(n)
+     * @param root node of the tree
+     * @param p target node 1
+     * @param q target node 2
+     * @return lowest common ancestor
+     */
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         findLowestCommonAncestor(root, p, q);
         return loweestCommonAncestor;
     }
 
-    public static boolean findLowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    public boolean findLowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (loweestCommonAncestor != null || root == null) {
             return false;
-        } else if (root == p || root == q) {
-            return true;
         }
 
         boolean isInLeft = findLowestCommonAncestor(root.left, p, q);
@@ -50,7 +40,9 @@ public class LowestCommonAncestorOfABinaryTree {
             loweestCommonAncestor = root;
         }
 
-        return isInLeft || isInRight;
+        boolean isCurrentNodeIsTarget = (root == p || root == q);
+
+        return isInLeft || isInRight || isCurrentNodeIsTarget;
     }
 
 }
