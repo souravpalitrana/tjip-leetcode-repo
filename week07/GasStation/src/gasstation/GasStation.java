@@ -83,5 +83,26 @@ public class GasStation {
 
         return true;
     }
+    
+    
+    // TC:: O(n) SC: O(1)
+    public int canCompleteCircuitBest(int[] gas, int[] cost) { 
+        int totalGas= 0;
+        int currentGas = 0;
+        int startingStationIdx = 0;
+        
+        for (int stationIdx = 0; stationIdx < gas.length; stationIdx++) {
+            totalGas += gas[stationIdx] - cost[stationIdx];
+            currentGas += gas[stationIdx] - cost[stationIdx];
+            
+            if (currentGas < 0) {
+                currentGas = 0;
+                startingStationIdx = stationIdx + 1;
+            }
+        }
+        
+        return (totalGas < 0) ? -1 : startingStationIdx;
+        
+    }
 
 }
