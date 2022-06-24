@@ -41,4 +41,24 @@ public class FirstBadVersion {
         return left;
     }
     
+    // With basic binary Search mid - 1, mid + 1;
+    public int firstBadVersionAlternate(int n) {
+        int left = 1;
+        int right = n;
+        int firstVeersion = 0;
+        
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            
+            if (isBadVersion(mid)) {
+                firstVeersion = mid;
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        
+        return firstVeersion;
+    }
+    
 }
