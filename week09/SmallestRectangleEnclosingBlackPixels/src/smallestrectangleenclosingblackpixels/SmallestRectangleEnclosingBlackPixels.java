@@ -10,13 +10,15 @@ import java.util.List;
 import javafx.util.Pair;
 
 /**
- *
+ * Leetcode: 302. Smallest Rectangle Enclosing Black Pixels
+ * Problem Link: https://leetcode.com/problems/smallest-rectangle-enclosing-black-pixels/
  * @author souravpalit
  */
 public class SmallestRectangleEnclosingBlackPixels {
 
     int [] directions = {-1, 0, 1, 0, -1};
     
+    // TC: O(MN) SC: O(MN)
     public int minArea(char[][] image, int x, int y) {
         List<Pair<Integer, Integer>> blackCells = new ArrayList<>();
         exploreShips(image, x, y, blackCells);
