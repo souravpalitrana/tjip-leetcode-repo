@@ -12,7 +12,7 @@ package numberofislands;
  */
 public class NumberOfIslands {
 
-    // TC: O(mn) SC: O(1)
+    // TC: O(mn) SC: O(mn)
     int [] directions = {-1, 0, 1, 0, -1};
     
     public int numIslands(char[][] grid) {
